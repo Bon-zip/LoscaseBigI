@@ -1,0 +1,66 @@
+{% extends "pages/layout.html" %}
+{% load static %}
+{% block title%} Register{% endblock %}
+
+{% block content%} 
+
+    <!-- Breadcrumb Area End Here -->
+    <!-- Register Area Start Here -->
+    <div class="login-register-area mt-no-text">
+        <div class="container container-default-2 custom-area">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-custom">
+                    <div class="login-register-wrapper">
+                        <div class="section-content text-center mb-5">
+                            <h2 class="title-4 mb-2">Create Account</h2>
+                            <p class="desc-content">Please Register using account detail bellow.</p>
+                        </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            <!-- Username -->
+                            <div class="single-input-item mb-3">
+                                <input type="text" name="username" id="username" required placeholder="Email or Username">
+                            </div>
+                            <!-- Last Name -->
+                            <div class="single-input-item mb-3">
+                                <input type="text" name="last_name" id="last_name" required placeholder="Last Name">
+                            </div>
+                            <!-- First Name -->
+                            <div class="single-input-item mb-3">
+                                <input type="text" name="first_name" id="first_name" required placeholder="First Name">
+                            </div>
+                            <!-- Email -->
+                            <div class="single-input-item mb-3">
+                                <input type="email" name="email" id="email" required placeholder="Email">
+                            </div>
+                            <!-- Password -->
+                            <div class="single-input-item mb-3">
+                                <input type="password" name="password" id="password" required placeholder="Enter your Password">
+                            </div>
+                            <!-- Confirm Password -->
+                            <div class="single-input-item mb-3">
+                                <input type="password" name="password2" id="password2" required placeholder="Confirm your Password">
+                            </div>
+                            <!-- Newsletter Subscription Checkbox -->
+                            <div class="single-input-item mb-3">
+                                <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                    <div class="remember-meta mb-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" name="subscribe_newsletter" class="custom-control-input" id="rememberMe">
+                                            <label class="custom-control-label" for="rememberMe">Subscribe to Our Newsletter</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Đã có tài khoản? <a href="{% url 'login' %}">Đăng nhập</a></p>
+                            <!-- Submit Button -->
+                            <div class="single-input-item mb-3">
+                                <button type="submit" class="btn flosun-button secondary-btn theme-color rounded-0">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
